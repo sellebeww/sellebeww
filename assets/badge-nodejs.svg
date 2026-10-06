@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="111" height="34" viewBox="0 0 111 34" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Node.js</title>
+  <desc id="desc">Node.js toolkit badge</desc><style>
+
+    .badge-shine { animation: shine 8s ease-in-out 0s infinite; }
+    @keyframes shine { 0%, 65% { transform: translateX(-40px); opacity: 0; } 70% { opacity: .55; } 94% { transform: translateX(136px); opacity: .55; } 95%, 100% { transform: translateX(136px); opacity: 0; } }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="110" height="33" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="110" height="33" rx="9" fill="#DFF9EC" stroke="#29836B" stroke-opacity=".3"/>
+  <rect x="6" y="6" width="22" height="22" rx="6" fill="#29836B"/>
+  <text x="17" y="21" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="700">JS</text>
+  <text x="36" y="22" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Node.js</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 34H3Z" fill="#FFFFFF" opacity="0"/></g>
+</svg>
