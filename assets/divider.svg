@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="40" viewBox="0 0 1280 40" role="img" aria-label="">
-<title></title>
-<defs><linearGradient id="line"><stop stop-color="#90b7ce" stop-opacity="0"/><stop offset=".5" stop-color="#90b7ce" stop-opacity=".65"/><stop offset="1" stop-color="#90b7ce" stop-opacity="0"/></linearGradient></defs>
-<style>.glow{animation:breathe 8s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.35}50%{opacity:.9}}@media(prefers-reduced-motion:reduce){.glow{animation:none;opacity:.6}}</style>
-<path d="M0 20H610M670 20H1280" stroke="url(#line)"/>
-<path d="M640 14L646 20L640 26L634 20Z" fill="#91b9cf" fill-opacity=".5"/>
-<circle class="glow" cx="640" cy="20" r="13" fill="#91b9cf" fill-opacity=".1"/>
-</svg>
