@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="103" height="34" viewBox="0 0 103 34" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Figma</title>
+  <desc id="desc">Figma toolkit badge</desc><style>
+
+    .badge-shine { animation: shine 10.24s linear 2.16s infinite; }
+    @keyframes shine {
+      0% { transform: translateX(-25px); opacity: 0; }
+      0.5859% { opacity: .7; }
+      5.2734% { opacity: .7; }
+      5.8594%, 100% { transform: translateX(128px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="102" height="33" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="102" height="33" rx="9" fill="#F0E4FF" stroke="#8657BA" stroke-opacity=".3"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" x="7" y="7" width="20" height="20" fill="#000000"><path fill="#0acf83" d="M45.5 129c11.9 0 21.5-9.6 21.5-21.5V86H45.5C33.6 86 24 95.6 24 107.5S33.6 129 45.5 129zm0 0" /><path fill="#a259ff" d="M24 64.5C24 52.6 33.6 43 45.5 43H67v43H45.5C33.6 86 24 76.4 24 64.5zm0 0" /><path fill="#f24e1e" d="M24 21.5C24 9.6 33.6 0 45.5 0H67v43H45.5C33.6 43 24 33.4 24 21.5zm0 0" /><path fill="#ff7262" d="M67 0h21.5C100.4 0 110 9.6 110 21.5S100.4 43 88.5 43H67zm0 0" /><path fill="#1abcfe" d="M110 64.5c0 11.9-9.6 21.5-21.5 21.5S67 76.4 67 64.5 76.6 43 88.5 43 110 52.6 110 64.5zm0 0" /></svg>
+  <text x="36" y="22" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Figma</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 34H3Z" fill="#FFFFFF" opacity="0"/></g>
+</svg>

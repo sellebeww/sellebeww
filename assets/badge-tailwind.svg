@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="34" viewBox="0 0 150 34" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Tailwind CSS</title>
+  <desc id="desc">Tailwind CSS toolkit badge</desc><style>
+
+    .badge-shine { animation: shine 8.08s linear 4.32s infinite; }
+    @keyframes shine {
+      0% { transform: translateX(-25px); opacity: 0; }
+      0.7426% { opacity: .7; }
+      6.6832% { opacity: .7; }
+      7.4257%, 100% { transform: translateX(175px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="149" height="33" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="149" height="33" rx="9" fill="#DFF6FF" stroke="#277C9D" stroke-opacity=".3"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" x="7" y="7" width="20" height="20" fill="#000000"><path d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0" fill="#38bdf8" /></svg>
+  <text x="36" y="22" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Tailwind CSS</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 34H3Z" fill="#FFFFFF" opacity="0"/></g>
+</svg>
