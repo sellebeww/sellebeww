@@ -2,7 +2,7 @@
   <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="./assets/tiger-arcade-mobile-dark.svg">
   <source media="(max-width: 600px)" srcset="./assets/tiger-arcade-mobile.svg">
   <source media="(prefers-color-scheme: dark)" srcset="./assets/tiger-arcade-dark.svg">
-  <img src="./assets/tiger-arcade.svg" width="100%" alt="Small paws. Big ideas. A striped tiger cat in neon sunglasses and a purple hoodie codes, surrounded by colorful confetti, music notes, and a candy cactus.">
+  <img src="./assets/tiger-arcade.svg" width="100%" alt="Small paws. Big ideas. A golden lion with a fluffy copper mane, neon sunglasses and a purple hoodie codes, surrounded by colorful confetti, music notes, and a candy cactus.">
 </picture>
 
 <p align="center">
@@ -13,7 +13,7 @@
 
 <p align="center">
   Building for the web, exploring AI, and caring about the little design details.<br>
-  <em>Curious mind. Tiger energy. A little bit of swagger.</em>
+  <em>Curious mind. Lion energy. A little bit of swagger.</em>
 </p>
 
 <p align="center">
@@ -45,21 +45,3 @@ I like connecting the dots between how things work and how they feel to use.
 - **AI & LLMs** — exploring deeper integration in web applications.
 - **Design** — learning how to make interfaces clearer and more thoughtful.
 - **A little every day** — staying curious, one small experiment at a time.
-
-<details>
-  <summary>A little wisdom from my tiger</summary>
-
-  <br>
-
-  > One small commit still counts.<br>
-  > Drink some water. Stretch a little.<br>
-  > Then make something you're proud of. ⚡
-
-</details>
-
----
-
-<p align="center">
-  <img src="./assets/tiger-sleep.svg" width="280" alt="A striped tiger cat sleeps curled up on a mint cushion under a purple starry blanket, with a crescent moon, twinkling stars, and little Zzz letters drifting upward."><br>
-  <sub>Stay curious. Stay wild. Keep building. 😎</sub>
-</p>

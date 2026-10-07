@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the tiger arcade profile artwork with Python's standard library.
+"""Generate the lion arcade profile artwork with Python's standard library.
 
 Run: python3 scripts/generate-assets.py
 Commit README.md and the generated assets together. Four banners cover mobile,
@@ -103,38 +103,51 @@ SCENE_MOTION = '''
 
 def character_defs():
     return '''
+    <linearGradient id="fur" x1="0" y1="0" x2=".75" y2="1"><stop stop-color="#FFE1A0"/><stop offset=".5" stop-color="#FFC266"/><stop offset="1" stop-color="#EF9847"/></linearGradient>
+    <linearGradient id="mane" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#D78650"/><stop offset=".5" stop-color="#B95D3C"/><stop offset="1" stop-color="#86402F"/></linearGradient>
+    <linearGradient id="hoodie" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#C8AFFB"/><stop offset="1" stop-color="#8965D2"/></linearGradient>
     <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#19273E"/><stop offset="1" stop-color="#4A275D"/></linearGradient>
     <clipPath id="lenses"><path d="M187 128h45l-4 24a10 10 0 0 1-10 8h-18a10 10 0 0 1-10-8Zm61 0h45l-4 24a10 10 0 0 1-10 8h-18a10 10 0 0 1-10-8Z"/></clipPath>'''
 
 
-def tiger():
-    """Shared tiger rig: striped tail, hoodie, expressive ears and sunglasses."""
+def lion():
+    """Shared lion rig: sculpted mane, rounded ears, hoodie and sunglasses."""
     return f'''
     <g stroke-linecap="round" stroke-linejoin="round">
       <g class="tail">
-        <path d="M278 244c57 31 94-23 64-48" stroke="{OUTLINE}" stroke-width="29"/>
-        <path d="M278 244c57 31 94-23 64-48" stroke="#FFAD45" stroke-width="23"/>
-        <path d="m300 248-3 13m25-19 5 11m14-25 12 6m-13-26 10-5" stroke="#80433F" stroke-width="8"/>
+        <path d="M278 244c48 28 79-4 65-38" stroke="{OUTLINE}" stroke-width="15"/>
+        <path d="M278 244c48 28 79-4 65-38" stroke="#F6B35B" stroke-width="9"/>
+        <path d="M343 216c-17-4-21-18-14-32 3 5 8 6 12 6 13 1 18 16 2 26Z" fill="url(#mane)" stroke="{OUTLINE}" stroke-width="3"/>
+        <path d="M336 195q10 5 7 14" stroke="#EFAB69" stroke-width="2.5"/>
       </g>
       <g class="body-bob">
         <ellipse cx="231" cy="226" rx="63" ry="52" fill="#FFAD45" stroke="{OUTLINE}" stroke-width="3"/>
-        <path d="M177 206q8-25 31-28h45q32 3 36 34l-6 50q-51 17-105-1Z" fill="#A58AF3" stroke="{OUTLINE}" stroke-width="3"/>
+        <path d="M177 206q8-25 31-28h45q32 3 36 34l-6 50q-51 17-105-1Z" fill="url(#hoodie)" stroke="{OUTLINE}" stroke-width="3"/>
         <path d="m207 184 24 25 24-25" fill="#8061C9" stroke="{OUTLINE}" stroke-width="3"/>
         <path d="m220 204-3 21m24-21 3 21" stroke="#91FFE2" stroke-width="3"/>
         <path d="M213 249h42l-5-13h-33Z" fill="#8061C9"/>
+        <path d="M185 223 182 249m94-20 2 19m-62-6h35" stroke="#D8C6FF" stroke-width="2.5"/>
         <g class="head-bop">
-          <g class="ear"><path d="m179 118-5-40q0-8 8-4l30 27" fill="#FFAD45" stroke="{OUTLINE}" stroke-width="3"/><path d="m183 104-1-19 15 16Z" fill="#F582A2"/></g>
-          <path d="m265 101 23-26q7-6 8 3l2 42" fill="#FFAD45" stroke="{OUTLINE}" stroke-width="3"/>
-          <path d="m281 103 8-17 1 22Z" fill="#F582A2"/>
-          <rect x="174" y="96" width="128" height="111" rx="48" fill="#FFB64E" stroke="{OUTLINE}" stroke-width="3"/>
-          <path d="m219 97 7 23 6-24m10 0 5 21 9-20M176 133l23 8-24 3m1 11 20 7-17 3m121-33-21 10 22 2m-1 11-18 8 16 2" fill="#80433F"/>
+          <!-- A soft, scalloped silhouette gives the mane a distinct lion shape. -->
+          <path d="M199 83q4-22 25-15 15-17 31-2 24-6 30 15 24-1 25 23 19 11 10 32 14 20-2 37 4 24-20 30-5 24-29 20-17 18-34 4-23 10-35-10-24 1-26-23-23-10-14-33-13-20 3-36-4-25 19-30 6-13 17-12Z" fill="url(#mane)" stroke="{OUTLINE}" stroke-width="3.2"/>
+          <path d="M182 118q-12 15-6 32m11 31q0 19 16 21m18 7 14 7m44-17q17-5 18-19m7-56q6 13 1 24M208 86q8-10 18-7m26-3 13 9" stroke="#EC9B60" stroke-width="3" opacity=".65"/>
+          <g class="ear"><circle cx="188" cy="111" r="18" fill="url(#fur)" stroke="{OUTLINE}" stroke-width="3"/><circle cx="188" cy="112" r="10" fill="#CC805D"/><path d="M181 109q7-8 13 0" stroke="#F5B887" stroke-width="2.5"/></g>
+          <circle cx="287" cy="111" r="18" fill="url(#fur)" stroke="{OUTLINE}" stroke-width="3"/>
+          <circle cx="287" cy="112" r="10" fill="#CC805D"/>
+          <path d="M280 109q7-8 13 0" stroke="#F5B887" stroke-width="2.5"/>
+          <path d="M237 94c-35 0-57 18-57 51 0 37 23 62 58 62s57-25 57-62c0-33-23-51-58-51Z" fill="url(#fur)" stroke="{OUTLINE}" stroke-width="3"/>
+          <path d="M208 107q29-14 57 0" stroke="#FFE8B6" stroke-width="5"/>
+          <path d="m225 96 9 10 7-10 9 6 5-9" fill="#E69B4D"/>
           <path d="M203 143q5-6 10 0m52 0q5-6 10 0" stroke="{OUTLINE}" stroke-width="3"/>
-          <ellipse cx="226" cy="180" rx="19" ry="17" fill="#FFF0CD"/>
-          <ellipse cx="250" cy="180" rx="19" ry="17" fill="#FFF0CD"/>
-          <path d="m233 172 6 6 6-6Z" fill="#E05E85" stroke="{OUTLINE}" stroke-width="2"/>
+          <ellipse cx="238" cy="191" rx="21" ry="11" fill="#FFF0CD"/>
+          <ellipse cx="223" cy="178" rx="20" ry="16" fill="#FFF4DA"/>
+          <ellipse cx="252" cy="178" rx="20" ry="16" fill="#FFF4DA"/>
+          <path d="M231 171q8-4 16 0-2 8-8 8t-8-8Z" fill="#714137" stroke="{OUTLINE}" stroke-width="2"/>
+          <path d="M235 172h7" stroke="#C8816B" stroke-width="2"/>
           <path d="M239 178v7q-7 7-13 0m13 0q7 7 13 0" stroke="{OUTLINE}" stroke-width="2"/>
           <ellipse cx="195" cy="170" rx="8" ry="5" fill="#EF7E83"/>
           <ellipse cx="282" cy="170" rx="8" ry="5" fill="#EF7E83"/>
+          <path d="M214 176h.1m6 4h.1m39-4h.1m-6 4h.1" stroke="#B67C55" stroke-width="2.5"/>
           <path d="m192 179-23-4m23 11-23 3m113-10 24-4m-24 11 24 3" stroke="{OUTLINE}" stroke-width="2"/>
           <g class="shades">
             <path d="M176 127h12m104 0h13m-73 8q8-5 16 0" stroke="{OUTLINE}" stroke-width="5"/>
@@ -204,7 +217,7 @@ def scene(p):
     <path d="m40 220 6 38q1 9 10 9h16q9 0 10-9l6-38Z" fill="#FF97B2" stroke="{OUTLINE}" stroke-width="2.5"/>
     <path d="m47 233 36 0m-33 12h30" stroke="#FFD4DE" stroke-width="4"/>
     <rect x="37" y="214" width="54" height="11" rx="5" fill="#F973A4" stroke="{OUTLINE}" stroke-width="2.5"/>
-    {tiger()}
+    {lion()}
     <path d="M110 276v17m230-17v17" stroke="#A388D0" stroke-width="8"/>
     <rect x="84" y="263" width="288" height="13" rx="6.5" fill="#79DECF" stroke="{OUTLINE}" stroke-width="2.5"/>
     {paws()}
@@ -242,7 +255,7 @@ def banner(theme, mobile=False):
     p = PALETTES[theme]
     width, height = (480, 580) if mobile else (960, 380)
     output = svg_open(width, height, "Small paws. Big ideas.",
-                      "A striped tiger cat in neon sunglasses and a purple hoodie codes and bops beside a candy cactus. Colorful confetti, music notes, and sparkles float around the desk.")
+                      "A golden lion with a fluffy copper mane, neon sunglasses and a purple hoodie codes beside a candy cactus. Colorful confetti, music notes, and sparkles float around the desk.")
     output += motion_style(CHARACTER_MOTION + SCENE_MOTION)
     output += f'''
   <defs>
@@ -259,7 +272,7 @@ def banner(theme, mobile=False):
 '''
     if mobile:
         output += f'''
-    <text x="32" y="40" font-family="ui-monospace, Consolas, monospace" fill="{p['muted']}" font-size="14">sellebeww / tiger.exe</text>
+    <text x="32" y="40" font-family="ui-monospace, Consolas, monospace" fill="{p['muted']}" font-size="14">sellebeww / lion.exe</text>
     <g font-family="'Trebuchet MS', Arial, sans-serif" font-size="53" font-weight="700" letter-spacing="-2">
       <text x="32" y="107" fill="{p['ink']}">Small paws.</text>
       <text x="32" y="165"><tspan fill="{p['purple']}">Big </tspan><tspan fill="{p['pink']}">ideas.</tspan></text>
@@ -271,7 +284,7 @@ def banner(theme, mobile=False):
 '''
     else:
         output += f'''
-    <text x="46" y="52" font-family="ui-monospace, Consolas, monospace" font-size="14" fill="{p['muted']}">sellebeww / tiger.exe</text>
+    <text x="46" y="52" font-family="ui-monospace, Consolas, monospace" font-size="14" fill="{p['muted']}">sellebeww / lion.exe</text>
     <g font-family="'Trebuchet MS', Arial, sans-serif" font-size="62" font-weight="700" letter-spacing="-2">
       <text x="46" y="144" fill="{p['ink']}">Small paws.</text>
       <text x="46" y="212"><tspan fill="{p['purple']}">Big </tspan><tspan fill="{p['pink']}">ideas.</tspan></text>
@@ -306,115 +319,6 @@ def badge(name, label, symbol, width, color, background, delay):
     write_svg(f"badge-{name}.svg", output)
 
 
-def footer():
-    output = svg_open(320, 190, "BRB, taking a catnap.", "A striped tiger cat sleeps curled up on a mint cushion under a purple starry blanket, head resting on its paws, with a crescent moon, twinkling stars, drifting Zzz letters, and neon sunglasses set aside.")
-    output += motion_style('''
-    .breathe { transform-origin: 150px 140px; animation: breathe 4.5s ease-in-out infinite; }
-    .head-rest { animation: head-rest 4.5s ease-in-out infinite; }
-    .ear-twitch { transform-origin: 240px 90px; animation: twitch 9s ease-in-out infinite; }
-    .tail-flick { transform-origin: 84px 132px; animation: flick 6s ease-in-out infinite; }
-    .zzz { transform-box: fill-box; transform-origin: center; animation: dreaming 6s ease-out infinite; opacity: 0; }
-    .zzz-two { animation-delay: -2s; }
-    .zzz-three { animation-delay: -4s; }
-    .star { transform-box: fill-box; transform-origin: center; animation: twinkle 4s ease-in-out infinite; }
-    .star-two { animation-delay: -1.3s; }
-    .star-three { animation-delay: -2.6s; }
-    .glow { animation: glow 6s ease-in-out infinite; }
-    @keyframes breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.012, 1.04); } }
-    @keyframes head-rest { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(1.5px); } }
-    @keyframes twitch { 0%, 82%, 92%, 100% { transform: rotate(0); } 86% { transform: rotate(-7deg); } 89% { transform: rotate(2deg); } }
-    @keyframes flick { 0%, 60%, 100% { transform: rotate(0); } 70% { transform: rotate(-9deg); } 80% { transform: rotate(3deg); } 88% { transform: rotate(-4deg); } }
-    @keyframes dreaming { 0% { transform: translate(-4px, 8px) scale(.55); opacity: 0; } 20%, 55% { opacity: .95; } 100% { transform: translate(8px, -16px) scale(1.15); opacity: 0; } }
-    @keyframes twinkle { 0%, 100% { transform: scale(.55) rotate(-10deg); opacity: .35; } 50% { transform: scale(1.1) rotate(10deg); opacity: 1; } }
-    @keyframes glow { 0%, 100% { opacity: .12; } 50% { opacity: .2; } }
-''')
-    output += f'''
-  <defs>
-    <mask id="crescent"><rect width="320" height="190" fill="#fff"/><circle cx="58" cy="35" r="15" fill="#000"/></mask>
-    <clipPath id="body-clip"><ellipse cx="142" cy="102" rx="78" ry="38"/></clipPath>
-    <clipPath id="head-clip"><ellipse cx="214" cy="112" rx="38" ry="31"/></clipPath>
-  </defs>
-  <g stroke-linecap="round" stroke-linejoin="round">
-    <rect class="glow" x="10" y="8" width="300" height="172" rx="76" fill="#B399EE" opacity=".14"/>
-    <!-- Night sky: crescent moon and twinkling stars. -->
-    <circle cx="50" cy="42" r="18" fill="#FFD98A" mask="url(#crescent)"/>
-    <path class="star" d="M104 30 106 36 112 38 106 40 104 46 102 40 96 38 102 36Z" fill="#F7A643"/>
-    <path class="star star-two" d="M276 100 277.5 104 282 105.5 277.5 107 276 111 274.5 107 270 105.5 274.5 104Z" fill="#7CE6C8"/>
-    <path class="star star-three" d="M30 100 31.5 104 36 105.5 31.5 107 30 111 28.5 107 24 105.5 28.5 104Z" fill="#FF8CB4"/>
-    <ellipse cx="160" cy="170" rx="128" ry="9" fill="#B399EE" opacity=".25"/>
-    <!-- Mint cushion with stitching. -->
-    <rect x="44" y="138" width="232" height="30" rx="15" fill="#5CCDB5" stroke="{OUTLINE}" stroke-width="2.5"/>
-    <ellipse cx="160" cy="140" rx="116" ry="20" fill="#91E8D3" stroke="{OUTLINE}" stroke-width="2.5"/>
-    <ellipse cx="160" cy="140" rx="98" ry="14" stroke="#49BBA3" stroke-width="1.5" stroke-dasharray="3 5"/>
-    <path d="M44 153h-9m242 0h9" stroke="{OUTLINE}" stroke-width="2.5"/>
-    <circle cx="32" cy="153" r="4" fill="#F7A643" stroke="{OUTLINE}" stroke-width="2"/>
-    <circle cx="288" cy="153" r="4" fill="#F7A643" stroke="{OUTLINE}" stroke-width="2"/>
-    <!-- Tail peeks out and flicks. -->
-    <g class="tail-flick">
-      <path d="M86 132C62 144 46 134 50 118c2-8 10-10 15-6" stroke="{OUTLINE}" stroke-width="17"/>
-      <path d="M86 132C62 144 46 134 50 118c2-8 10-10 15-6" stroke="#FFAD45" stroke-width="12"/>
-      <path d="M86 132C62 144 46 134 50 118c2-8 10-10 15-6" stroke="#80433F" stroke-width="12" stroke-dasharray="3 9" stroke-linecap="butt"/>
-    </g>
-    <g class="breathe">
-      <ellipse cx="142" cy="102" rx="78" ry="38" fill="#FFB64E" stroke="{OUTLINE}" stroke-width="2.5"/>
-      <g clip-path="url(#body-clip)">
-        <path d="M138 60 143 84 150 60ZM156 60 161 86 168 60ZM174 62 178 84 186 62Z" fill="#80433F"/>
-        <ellipse cx="152" cy="128" rx="46" ry="12" fill="#FFD48B" opacity=".85"/>
-      </g>
-      <ellipse cx="142" cy="102" rx="78" ry="38" stroke="{OUTLINE}" stroke-width="2.5"/>
-      <!-- Starry blanket in hoodie purple. -->
-      <path d="M70 114Q70 74 102 68Q130 64 136 88Q144 116 138 143H80Q68 132 70 114Z" fill="#A58AF3" stroke="{OUTLINE}" stroke-width="2.5"/>
-      <path d="M76 92Q104 80 134 92" stroke="#C6B2FA" stroke-width="2.5"/>
-      <path d="M72 124Q106 134 140 124" stroke="#8061C9" stroke-width="3"/>
-      <path d="M92 100 93.5 104 98 105.5 93.5 107 92 111 90.5 107 86 105.5 90.5 104Z" fill="#91FFE2"/>
-      <path d="M118 92 119.2 95 122.5 96.2 119.2 97.4 118 100.5 116.8 97.4 113.5 96.2 116.8 95Z" fill="#FFD98A"/>
-      <path d="M112 114 113 116.5 115.5 117.5 113 118.5 112 121 111 118.5 108.5 117.5 111 116.5Z" fill="#FF9FC0"/>
-    </g>
-    <g class="head-rest">
-      <g transform="translate(0 -4)">
-        <g class="ear-twitch">
-          <path d="M230 82 249 60Q255 56 257 64L256 96" fill="#FFB64E" stroke="{OUTLINE}" stroke-width="2.5"/>
-          <path d="M243 80 252 68 253 86Z" fill="#F58DA7"/>
-        </g>
-        <path d="M184 92 180 62Q180 55 187 60L209 80" fill="#FFB64E" stroke="{OUTLINE}" stroke-width="2.5"/>
-        <path d="M187 80 187 68 199 78Z" fill="#F58DA7"/>
-        <ellipse cx="214" cy="112" rx="38" ry="31" fill="#FFB64E"/>
-        <g clip-path="url(#head-clip)">
-          <path d="M199 80 205 97 211 80ZM213 78 218 97 224 78ZM227 80 232 95 238 83Z" fill="#80433F"/>
-          <path d="M176 106 192 111 176 116ZM252 106 236 111 252 116Z" fill="#80433F"/>
-        </g>
-        <ellipse cx="214" cy="112" rx="38" ry="31" stroke="{OUTLINE}" stroke-width="2.5"/>
-        <ellipse cx="216" cy="124" rx="17" ry="11" fill="#FFF0CD"/>
-        <ellipse cx="192" cy="121" rx="6" ry="3.5" fill="#EF7E83" opacity=".85"/>
-        <ellipse cx="238" cy="121" rx="6" ry="3.5" fill="#EF7E83" opacity=".85"/>
-        <path d="M197 111q6 6 12 0m18 0q6 6 12 0" stroke="{OUTLINE}" stroke-width="2.5"/>
-        <path d="m198 113-3 3m13-3 3 3m15-3-3 3m13-3 3 3" stroke="{OUTLINE}" stroke-width="1.5"/>
-        <path d="M212 119h8l-4 5Z" fill="#E05E85" stroke="{OUTLINE}" stroke-width="1.5"/>
-        <path d="M216 124v2q-4 4-8 1m8-1q4 4 8 1" stroke="{OUTLINE}" stroke-width="1.5"/>
-        <path d="M200 124 184 120m16 7-15 3m47-6 16-4m-16 7 15 3" stroke="{OUTLINE}" stroke-width="1.5"/>
-      </g>
-      <!-- Front paws cradle the chin. -->
-      <g stroke="{OUTLINE}" stroke-width="2.2">
-        <ellipse cx="198" cy="140" rx="17" ry="8" fill="#FFB64E"/>
-        <ellipse cx="230" cy="141" rx="17" ry="8" fill="#FFB64E"/>
-        <path d="M192 142v4m7-4v4m26-3v4m7-4v4" stroke="#A5513C" stroke-width="1.6"/>
-      </g>
-    </g>
-    <!-- Sunglasses off: even a cool cat needs a nap. -->
-    <g transform="translate(236 171) rotate(-4)">
-      <path d="M0 0h16l-2 10H3Zm22 0h16l-2 10H25Z" fill="{OUTLINE}"/>
-      <path d="M16 3h6" stroke="{OUTLINE}" stroke-width="2"/>
-      <path d="m4 6 5-4m18 4 5-4" stroke="#75EBD5" stroke-width="1.5"/>
-    </g>
-    <!-- Zzz drifting upward. -->
-    <g transform="translate(266 70)"><path class="zzz" d="M0 0h8l-8 10h8" stroke="#B18ADF" stroke-width="2.5"/></g>
-    <g transform="translate(280 46)"><path class="zzz zzz-two" d="M0 0h10l-10 12h10" stroke="#F18CAF" stroke-width="3"/></g>
-    <g transform="translate(296 18)"><path class="zzz zzz-three" d="M0 0h12l-12 14h12" stroke="#6FD9C3" stroke-width="3.5"/></g>
-  </g>
-</svg>'''
-    write_svg("tiger-sleep.svg", output)
-
-
 if __name__ == "__main__":
     ASSETS.mkdir(exist_ok=True)
     for theme_name in PALETTES:
@@ -428,5 +332,4 @@ if __name__ == "__main__":
         ("ai", "AI / LLMs", "✦", 123, "#BF4D7B", "#FFE4EE", 2),
     ]:
         badge(*args)
-    footer()
-    print("Generated 4 tiger banners, 5 colorful badges, and 1 sleeping tiger.")
+    print("Generated 4 lion banners and 5 colorful badges.")
