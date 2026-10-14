@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="106" height="34" viewBox="0 0 106 34" fill="none" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="44" viewBox="0 0 89 44" fill="none" role="img" aria-labelledby="title desc">
   <title id="title">Flutter</title>
   <desc id="desc">Flutter toolkit badge</desc><style>
 
-    .badge-shine { animation: shine 3.76s linear 0.72s infinite; }
+    .badge-shine { animation: shine 5.20s linear 2.16s infinite; }
     @keyframes shine {
       0% { transform: translateX(-25px); opacity: 0; }
-      1.5957% { opacity: .7; }
-      14.3617% { opacity: .7; }
-      15.9574%, 100% { transform: translateX(131px); opacity: 0; }
+      1.1538% { opacity: .7; }
+      10.3846% { opacity: .7; }
+      11.5385%, 100% { transform: translateX(114px); opacity: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="105" height="33" rx="9"/></clipPath></defs>
-  <rect x=".5" y=".5" width="105" height="33" rx="9" fill="#E5EDFF" stroke="#4976C0" stroke-opacity=".3"/>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" x="7" y="7" width="20" height="20" fill="#000000"><g fill="#3FB6D3"><path d="M12.3 64.2L76.3 0h39.4L32.1 83.6zM76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z" /></g><path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z" /><path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z" /><linearGradient id="flutter-original-a" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399"><stop offset="0" stop-color="#1b4e94" /><stop offset=".63" stop-color="#1a5497" /><stop offset="1" stop-color="#195a9b" /></linearGradient><path fill="url(#flutter-original-a)" d="M61.6 113.1l30.8-8.4-10.8-10.8z" /></svg>
-  <text x="36" y="22" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Flutter</text>
-  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 34H3Z" fill="#FFFFFF" opacity="0"/></g>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="88" height="43" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="88" height="43" rx="9" fill="#E5EDFF" stroke="#4976C0" stroke-opacity=".3"/>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" x="7" y="12" width="20" height="20" fill="#000000"><g fill="#3FB6D3"><path d="M12.3 64.2L76.3 0h39.4L32.1 83.6zM76.3 128h39.4L81.6 93.9l34.1-34.8H76.3L42.2 93.5z" /></g><path fill="#27AACD" d="M81.6 93.9l-20-20-19.4 19.6 19.4 19.6z" /><path fill="#19599A" d="M115.7 128L81.6 93.9l-20 19.2L76.3 128z" /><linearGradient id="flutter-original-a" gradientUnits="userSpaceOnUse" x1="59.365" y1="116.36" x2="86.825" y2="99.399"><stop offset="0" stop-color="#1b4e94" /><stop offset=".63" stop-color="#1a5497" /><stop offset="1" stop-color="#195a9b" /></linearGradient><path fill="url(#flutter-original-a)" d="M61.6 113.1l30.8-8.4-10.8-10.8z" /></svg>
+  <text x="36" y="27" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Flutter</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 44H3Z" fill="#FFFFFF" opacity="0"/></g>
 </svg>

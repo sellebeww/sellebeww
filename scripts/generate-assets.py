@@ -177,8 +177,8 @@ def paws():
     </g>'''
 
 
-def status_pill(p, x, y):
-    return f'''<g transform="translate({x} {y})">
+def status_pill(p, x, y, scale=1):
+    return f'''<g transform="translate({x} {y}) scale({scale})">
       <rect width="244" height="32" rx="16" fill="{p['pill']}"/>
       <circle class="status-ring" cx="17" cy="16" r="4" stroke="{p['mint']}" opacity="0"/>
       <circle cx="17" cy="16" r="4" fill="{p['mint']}"/>
@@ -254,7 +254,7 @@ def scene(p):
 
 def banner(theme, mobile=False):
     p = PALETTES[theme]
-    width, height = (480, 580) if mobile else (960, 380)
+    width, height = (480, 610) if mobile else (960, 380)
     output = svg_open(width, height, "Small paws. Big ideas.",
                       "A golden lion with a fluffy copper mane, neon sunglasses and a purple hoodie codes beside a candy cactus. Colorful confetti, music notes, and sparkles float around the desk.")
     output += motion_style(CHARACTER_MOTION + SCENE_MOTION)
@@ -273,15 +273,18 @@ def banner(theme, mobile=False):
 '''
     if mobile:
         output += f'''
-    <text x="32" y="40" font-family="ui-monospace, Consolas, monospace" fill="{p['muted']}" font-size="14">sellebeww / lion.exe</text>
+    <text x="32" y="40" font-family="ui-monospace, Consolas, monospace" fill="{p['muted']}" font-size="20">sellebeww / lion.exe</text>
     <g font-family="'Trebuchet MS', Arial, sans-serif" font-size="53" font-weight="700" letter-spacing="-2">
       <text x="32" y="107" fill="{p['ink']}">Small paws.</text>
       <text x="32" y="165"><tspan fill="{p['purple']}">Big </tspan><tspan fill="{p['pink']}">ideas.</tspan></text>
     </g>
     <path class="accent-stroke" d="M34 178q100-5 251 0" stroke="url(#rainbow)" stroke-width="4" stroke-linecap="round" stroke-dasharray="55 18 9 18"/>
     <g transform="translate(25 179)">{scene(p)}</g>
-    {status_pill(p, 118, 495)}
-    <text x="240" y="554" text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="13" letter-spacing="2" fill="{p['muted']}">WEB · AI · DESIGN · AUTOMATION</text>
+    {status_pill(p, 75.3, 493, scale=1.35)}
+    <g text-anchor="middle" font-family="ui-monospace, Consolas, monospace" font-size="20" letter-spacing="2" fill="{p['muted']}">
+      <text x="240" y="564">WEB · AI · DESIGN</text>
+      <text x="240" y="591">AUTOMATION</text>
+    </g>
 '''
     else:
         output += f'''
@@ -305,15 +308,17 @@ def banner(theme, mobile=False):
 
 def stack_icon(name):
     """Inline vendored vector logos so GitHub never needs nested remote images."""
-    if name == "ai":
-        return '<path d="m17 6 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z" fill="#BF4D7B"/>'
     icon_name = {
         "html": "html5", "css": "css3", "tailwind": "tailwindcss",
         "react-native": "react", "android-studio": "androidstudio",
+        "cpp": "cplusplus",
+        "claude-code": "claude-color", "codex": "openai",
+        "google-ai-studio": "aistudio", "deepseek": "deepseek-color",
+        "antigravity": "antigravity-color",
     }.get(name, name)
     root = ET.parse(ASSETS / "icons" / f"{icon_name}.svg").getroot()
     ET.register_namespace("", "http://www.w3.org/2000/svg")
-    root.attrib.update(x="7", y="7", width="20", height="20")
+    root.attrib.update(x="7", y="12", width="20", height="20")
     # The outer artwork uses fill="none"; logos with implicit fills need black.
     root.attrib.setdefault("fill", "#000000")
     return ET.tostring(root, encoding="unicode")
@@ -329,7 +334,7 @@ def badge(name, label, width, color, background, index, group_size):
     # SVG <img> elements have independent clocks; stagger from each image load.
     cycle = group_size * SHINE_SLOT + SHINE_REST
     end = SHINE_DURATION / cycle * 100
-    output = svg_open(width, 34, label, f"{label} toolkit badge")
+    output = svg_open(width, 44, label, f"{label} toolkit badge")
     output += motion_style(f'''
     .badge-shine {{ animation: shine {cycle:.2f}s linear {index * SHINE_SLOT:.2f}s infinite; }}
     @keyframes shine {{
@@ -340,54 +345,81 @@ def badge(name, label, width, color, background, index, group_size):
     }}
 ''')
     output += f'''
-  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="{width - 1}" height="33" rx="9"/></clipPath></defs>
-  <rect x=".5" y=".5" width="{width - 1}" height="33" rx="9" fill="{background}" stroke="{color}" stroke-opacity=".3"/>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="{width - 1}" height="43" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="{width - 1}" height="43" rx="9" fill="{background}" stroke="{color}" stroke-opacity=".3"/>
   {stack_icon(name)}
-  <text x="36" y="22" fill="{OUTLINE}" font-family="Arial, sans-serif" font-size="13" font-weight="600">{escape(label)}</text>
-  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 34H3Z" fill="#FFFFFF" opacity="0"/></g>
+  <text x="36" y="27" fill="{OUTLINE}" font-family="Arial, sans-serif" font-size="13" font-weight="600">{escape(label)}</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 44H3Z" fill="#FFFFFF" opacity="0"/></g>
 </svg>'''
     write_svg(f"badge-{name}.svg", output)
 
 
-# Keep the compact pastel badges consistent with the original profile artwork.
+# Widths = text x (36) + browser-measured Arial 600 13px label + 12px right padding.
+# Keep README image widths in sync with these intrinsic SVG widths.
 BADGE_GROUPS = {
+    "AI Tools": [
+        ("claude-code", "Claude Code", 128, "#BA5938", "#FFEADC"),
+        ("codex", "Codex", 88, "#29836B", "#DFF9EC"),
+        ("cursor", "Cursor", 91, "#645478", "#EDE6F5"),
+        ("google-ai-studio", "Google AI Studio", 155, "#4976C0", "#E5EDFF"),
+        ("deepseek", "DeepSeek", 110, "#4976C0", "#E5EDFF"),
+        ("antigravity", "Antigravity", 114, "#8657BA", "#F0E4FF"),
+        ("perplexity", "Perplexity", 108, "#277C9D", "#DFF6FF"),
+        ("higgsfield", "Higgsfield", 108, "#29836B", "#DFF9EC"),
+        ("midjourney", "Midjourney", 116, "#8657BA", "#F0E4FF"),
+    ],
     "Frontend": [
-        ("html", "HTML5", 105, "#BA5938", "#FFEADC"),
-        ("css", "CSS3", 98, "#4976C0", "#E5EDFF"),
-        ("javascript", "JavaScript", 133, "#8A681D", "#FFF2C9"),
-        ("jquery", "jQuery", 105, "#277C9D", "#DFF6FF"),
-        ("typescript", "TypeScript", 133, "#4976C0", "#E5EDFF"),
-        ("bootstrap", "Bootstrap", 129, "#8657BA", "#F0E4FF"),
-        ("tailwind", "Tailwind CSS", 150, "#277C9D", "#DFF6FF"),
-        ("react", "React", 98, "#277C9D", "#DFF6FF"),
-        ("nextjs", "Next.js", 111, "#645478", "#EDE6F5"),
+        ("html", "HTML5", 92, "#BA5938", "#FFEADC"),
+        ("css", "CSS3", 82, "#4976C0", "#E5EDFF"),
+        ("javascript", "JavaScript", 114, "#8A681D", "#FFF2C9"),
+        ("jquery", "jQuery", 90, "#277C9D", "#DFF6FF"),
+        ("typescript", "TypeScript", 115, "#4976C0", "#E5EDFF"),
+        ("bootstrap", "Bootstrap", 110, "#8657BA", "#F0E4FF"),
+        ("tailwind", "Tailwind CSS", 130, "#277C9D", "#DFF6FF"),
+        ("react", "React", 84, "#277C9D", "#DFF6FF"),
+        ("nextjs", "Next.js", 91, "#645478", "#EDE6F5"),
     ],
     "Backend": [
-        ("php", "PHP", 91, "#7560A8", "#EDE6FF"),
-        ("laravel", "Laravel", 113, "#BC5266", "#FFE4E9"),
-        ("nodejs", "Node.js", 111, "#29836B", "#DFF9EC"),
-        ("express", "Express", 116, "#645478", "#EDE6F5"),
-        ("nestjs", "NestJS", 108, "#BF4D7B", "#FFE4EE"),
-        ("go", "Go", 81, "#277C9D", "#DFF6FF"),
+        ("rails", "Ruby on Rails", 135, "#BC5266", "#FFE4E9"),
+        ("python", "Python", 93, "#4976C0", "#E5EDFF"),
+        ("php", "PHP", 75, "#7560A8", "#EDE6FF"),
+        ("laravel", "Laravel", 94, "#BC5266", "#FFE4E9"),
+        ("nodejs", "Node.js", 95, "#29836B", "#DFF9EC"),
+        ("express", "Express", 99, "#645478", "#EDE6F5"),
+        ("nestjs", "NestJS", 93, "#BF4D7B", "#FFE4EE"),
+        ("go", "Go", 67, "#277C9D", "#DFF6FF"),
     ],
     "Mobile": [
-        ("dart", "Dart", 91, "#29836B", "#DFF9EC"),
-        ("flutter", "Flutter", 106, "#4976C0", "#E5EDFF"),
-        ("react-native", "React Native", 150, "#277C9D", "#DFF6FF"),
+        ("swift", "Swift", 80, "#BA5938", "#FFEADC"),
+        ("kotlin", "Kotlin", 85, "#8657BA", "#F0E4FF"),
+        ("dart", "Dart", 75, "#29836B", "#DFF9EC"),
+        ("flutter", "Flutter", 89, "#4976C0", "#E5EDFF"),
+        ("react-native", "React Native", 127, "#277C9D", "#DFF6FF"),
     ],
     "Database & Tools": [
-        ("mysql", "MySQL", 109, "#277C9D", "#DFF6FF"),
-        ("postgresql", "PostgreSQL", 145, "#4976C0", "#E5EDFF"),
-        ("graphql", "GraphQL", 122, "#BF4D7B", "#FFE4EE"),
-        ("figma", "Figma", 103, "#8657BA", "#F0E4FF"),
-        ("firebase", "Firebase", 122, "#99621F", "#FFF0D2"),
-        ("rabbitmq", "RabbitMQ", 132, "#BA5938", "#FFEADC"),
-        ("git", "Git", 81, "#BC5266", "#FFE4E9"),
-        ("docker", "Docker", 111, "#8657BA", "#F0E4FF"),
-        ("prisma", "Prisma", 110, "#7560A8", "#EDE6FF"),
-        ("postman", "Postman", 122, "#BA5938", "#FFEADC"),
-        ("android-studio", "Android Studio", 158, "#29836B", "#DFF9EC"),
-        ("ai", "AI / LLMs", 123, "#BF4D7B", "#FFE4EE"),
+        ("supabase", "Supabase", 110, "#29836B", "#DFF9EC"),
+        ("mysql", "MySQL", 93, "#277C9D", "#DFF6FF"),
+        ("postgresql", "PostgreSQL", 124, "#4976C0", "#E5EDFF"),
+        ("graphql", "GraphQL", 105, "#BF4D7B", "#FFE4EE"),
+        ("figma", "Figma", 87, "#8657BA", "#F0E4FF"),
+        ("firebase", "Firebase", 102, "#99621F", "#FFF0D2"),
+        ("rabbitmq", "RabbitMQ", 110, "#BA5938", "#FFEADC"),
+        ("git", "Git", 67, "#BC5266", "#FFE4E9"),
+        ("docker", "Docker", 93, "#8657BA", "#F0E4FF"),
+        ("prisma", "Prisma", 92, "#7560A8", "#EDE6FF"),
+        ("postman", "Postman", 103, "#BA5938", "#FFEADC"),
+        ("android-studio", "Android Studio", 142, "#29836B", "#DFF9EC"),
+    ],
+    "Languages & Creative": [
+        ("c", "C", 58, "#4976C0", "#E5EDFF"),
+        ("cpp", "C++", 73, "#4976C0", "#E5EDFF"),
+        ("csharp", "C#", 65, "#8657BA", "#F0E4FF"),
+        ("r", "R", 58, "#4976C0", "#E5EDFF"),
+        ("rust", "Rust", 76, "#BA5938", "#FFEADC"),
+        ("fortran", "Fortran", 94, "#8657BA", "#F0E4FF"),
+        ("lua", "Lua", 72, "#4976C0", "#E5EDFF"),
+        ("unity", "Unity", 81, "#645478", "#EDE6F5"),
+        ("blender", "Blender", 97, "#BA5938", "#FFEADC"),
     ],
 }
 

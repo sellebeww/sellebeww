@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="44" viewBox="0 0 108 44" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Perplexity</title>
+  <desc id="desc">Perplexity toolkit badge</desc><style>
+
+    .badge-shine { animation: shine 8.08s linear 4.32s infinite; }
+    @keyframes shine {
+      0% { transform: translateX(-25px); opacity: 0; }
+      0.7426% { opacity: .7; }
+      6.6832% { opacity: .7; }
+      7.4257%, 100% { transform: translateX(133px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs><clipPath id="badge-clip"><rect x=".5" y=".5" width="107" height="43" rx="9"/></clipPath></defs>
+  <rect x=".5" y=".5" width="107" height="43" rx="9" fill="#DFF6FF" stroke="#277C9D" stroke-opacity=".3"/>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" fill-rule="evenodd" height="20" style="flex:none;line-height:1" viewBox="0 0 24 24" width="20" x="7" y="12"><title>Perplexity</title><path d="M19.785 0v7.272H22.5V17.62h-2.935V24l-7.037-6.194v6.145h-1.091v-6.152L4.392 24v-6.465H1.5V7.188h2.884V0l7.053 6.494V.19h1.09v6.49L19.786 0zm-7.257 9.044v7.319l5.946 5.234V14.44l-5.946-5.397zm-1.099-.08l-5.946 5.398v7.235l5.946-5.234V8.965zm8.136 7.58h1.844V8.349H13.46l6.105 5.54v2.655zm-8.982-8.28H2.59v8.195h1.8v-2.576l6.192-5.62zM5.475 2.476v4.71h5.115l-5.115-4.71zm13.219 0l-5.115 4.71h5.115v-4.71z" /></svg>
+  <text x="36" y="27" fill="#342543" font-family="Arial, sans-serif" font-size="13" font-weight="600">Perplexity</text>
+  <g clip-path="url(#badge-clip)"><path class="badge-shine" d="M-14 0H0l17 44H3Z" fill="#FFFFFF" opacity="0"/></g>
+</svg>

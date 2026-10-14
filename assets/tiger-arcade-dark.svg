@@ -76,7 +76,7 @@
       <text x="46" y="212"><tspan fill="#BAA0FF">Big </tspan><tspan fill="#FF8CB4">ideas.</tspan></text>
     </g>
     <path class="accent-stroke" d="M48 226q140-5 310 0" stroke="url(#rainbow)" stroke-width="4" stroke-linecap="round" stroke-dasharray="55 18 9 18"/>
-    <g transform="translate(46 251)">
+    <g transform="translate(46 251) scale(1)">
       <rect width="244" height="32" rx="16" fill="#3A2A55"/>
       <circle class="status-ring" cx="17" cy="16" r="4" stroke="#6EEAD2" opacity="0"/>
       <circle cx="17" cy="16" r="4" fill="#6EEAD2"/>
