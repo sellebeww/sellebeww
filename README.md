@@ -17,6 +17,8 @@
 </p>
 
 <p align="center">
+  <a href="https://vassel-portfolio.vercel.app">3D portfolio ↗</a>
+  &nbsp;·&nbsp;
   <a href="https://github.com/sellebeww?tab=repositories">Explore my repos ↗</a>
   &nbsp;·&nbsp;
   <a href="https://github.com/sellebeww?tab=stars">Starred finds ↗</a>
@@ -26,7 +28,7 @@
 
 ### 🧑‍💻 A little about me
 
-I'm **Vassel Goleyu**, a software engineer with a soft spot for **Node.js**, thoughtful **design systems**, and bringing **AI into web applications**. My curiosity also extends beyond the browser to **PLC & automation**.
+I'm **Vassel Goleyu**, an Informatics student at **Universitas Multimedia Nusantara** and a full-stack developer with a soft spot for **TypeScript**, thoughtful **design systems**, and bringing **AI into web applications**. I also build **Android** apps, and my curiosity extends beyond the browser to **PLC & automation**.
 
 I like connecting the dots between how things work and how they feel to use.
 
@@ -121,6 +123,58 @@ I like connecting the dots between how things work and how they feel to use.
   <a href="https://unity.com/"><img src="./assets/badge-unity.svg" alt="Unity" width="81" height="44"></a>
   <a href="https://www.blender.org/"><img src="./assets/badge-blender.svg" alt="Blender" width="97" height="44"></a>
 </p>
+
+## Featured projects
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://vassel-f-b-experience.vercel.app/"><img src="./assets/projects/fb-experience.webp" alt="F&amp;B Experience screenshot" width="100%"></a><br>
+      <b>F&amp;B Experience</b><br><sub>One ordering flow for two venues · React, Vite, Tailwind</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/sellebeww/Ngantriin"><img src="./assets/projects/ngantriin.webp" alt="Ngantriin screenshot" width="100%"></a><br>
+      <b>Ngantriin</b><br><sub>Digital restaurant queue for Android · Kotlin, Compose, Supabase</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/sellebeww/BUNDA-SIAGA"><img src="./assets/projects/bunda-siaga.webp" alt="BUNDA SIAGA screenshot" width="100%"></a><br>
+      <b>BUNDA SIAGA</b><br><sub>Offline maternal-health danger-sign aid · Kotlin</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://github.com/sellebeww/CAPIRA"><img src="./assets/projects/capira.webp" alt="CAPIRA screenshot" width="100%"></a><br>
+      <b>CAPIRA</b><br><sub>Camera-based capillary refill research PWA · TypeScript</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://sellebeww.github.io/tomato-vision/"><img src="./assets/projects/tomato-vision.webp" alt="Tomato Vision screenshot" width="100%"></a><br>
+      <b>Tomato Vision</b><br><sub>CNN freshness classifier, runs in the browser · TensorFlow</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://github.com/sellebeww/GEPREK-Project-Mata-Kuliah-Game-Development"><img src="./assets/projects/geprek.webp" alt="GEPREK! screenshot" width="100%"></a><br>
+      <b>GEPREK!</b><br><sub>2D stall-management game · Unity, C#</sub>
+    </td>
+  </tr>
+</table>
+
+<sub>Real screenshots from each project. The full case studies live in the <a href="https://vassel-portfolio.vercel.app">3D portfolio</a>.</sub>
+
+#### Recently shipped
+
+| Project | What it does | Built with |
+| --- | --- | --- |
+| [**EDUVIA**](https://github.com/sellebeww/EDUVIA) | One tap sends a study kit to the duty teacher when a class has no teacher. | Rails 8 · Hotwire · PostgreSQL |
+| [**HakData**](https://github.com/sellebeww/HakData) | Helps citizens claim their personal-data rights (UU PDP) with automatic deadlines and an evidence dossier. | TypeScript · RabbitMQ |
+| [**BALIKIN**](https://balikin-uyy.vercel.app) | A shared returns network that gathers returns from many local brands at one pickup point. | Next.js · TypeScript |
+| [**Tagih-Tuntas**](https://tagih-tuntas.vercel.app) | Finds what blocks a B2B invoice, routes it to the right party and tracks it until paid. | Next.js · TypeScript |
+| [**APEX GYM**](https://sellebew-apex-gym.vercel.app/) | Member, coach and admin portals for gym management. | React · Hono · SQLite |
+| [**Smart-Toko**](https://github.com/sellebeww/Smart-Toko) | Voice bookkeeping for small shops: stock, credit, margins and phone-to-phone sync. | Flutter · Supabase |
+| [**paper-trail**](https://github.com/sellebeww/paper-trail) | Tamper-evident evidence notebook: hash chain, witness co-signs, RFC 3161 time anchors. | TypeScript |
+| [**RujukSekali**](https://rujuk-sekali-eight.vercel.app) | Coordinates multi-service hospital visits for patients from out of town. | Next.js · PostgreSQL |
+| [**jalan-toga**](https://jalan-toga.vercel.app) | A thesis companion for Indonesian students: roadmap, statistics toolkit, references. | React · Vite · PWA |
+| [**assay-evm**](https://github.com/sellebeww/assay-evm) | Checks whether a Solidity patch really closes an exploit, with replayable evidence. | Python |
+
+<sub>Plus 25+ more on <a href="https://github.com/sellebeww?tab=repositories">the repositories tab</a>: Android apps, PWAs, games and research prototypes.</sub>
 
 ### 🌱 Currently growing
 
